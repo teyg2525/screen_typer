@@ -1,16 +1,9 @@
 """Text recognition on a captured screen frame via the Vision framework."""
 
-from dataclasses import dataclass
-
 import Vision
 from Quartz import CGImageRef  # noqa: F401  (type reference only)
 
-
-@dataclass
-class TextObservation:
-    text: str
-    confidence: float
-    bounding_box: tuple[float, float, float, float]  # normalized x, y, w, h
+from screen_typer.text_observation import TextObservation
 
 
 def recognize_text(cg_image) -> list[TextObservation]:

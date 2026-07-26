@@ -1,7 +1,17 @@
-pyobjc-framework-Cocoa
-pyobjc-framework-Quartz
-pyobjc-framework-ApplicationServices
-pyobjc-framework-Vision
-pyobjc-framework-ScreenCaptureKit
-quickmachotkey
-py2app
+pyobjc-framework-Cocoa; sys_platform == 'darwin'
+pyobjc-framework-Quartz; sys_platform == 'darwin'
+pyobjc-framework-ApplicationServices; sys_platform == 'darwin'
+pyobjc-framework-Vision; sys_platform == 'darwin'
+pyobjc-framework-ScreenCaptureKit; sys_platform == 'darwin'
+quickmachotkey; sys_platform == 'darwin'
+py2app; sys_platform == 'darwin'
+
+winrt-Windows.Media.Ocr; sys_platform == 'win32'
+winrt-Windows.Graphics.Imaging; sys_platform == 'win32'
+winrt-Windows.Security.Cryptography; sys_platform == 'win32'
+winrt-Windows.Storage.Streams; sys_platform == 'win32'
+winrt-Windows.Globalization; sys_platform == 'win32'
+mss; sys_platform == 'win32'
+pynput; sys_platform == 'win32'
+pystray; sys_platform == 'win32'
+Pillow; sys_platform == 'win32'

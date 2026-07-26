@@ -1,12 +1,19 @@
 """Core loop: capture the region, OCR it, type any newly-seen words."""
 
+import platform
 import threading
 import time
 
 from screen_typer.dedup import DedupTracker
-from screen_typer.platform_macos.capture import RegionCapture
-from screen_typer.platform_macos.keystrokes import type_text
-from screen_typer.platform_macos.ocr import recognize_text
+
+if platform.system() == "Windows":
+    from screen_typer.platform_windows.capture import RegionCapture
+    from screen_typer.platform_windows.keystrokes import type_text
+    from screen_typer.platform_windows.ocr import recognize_text
+else:
+    from screen_typer.platform_macos.capture import RegionCapture
+    from screen_typer.platform_macos.keystrokes import type_text
+    from screen_typer.platform_macos.ocr import recognize_text
 
 POLL_INTERVAL_SECONDS = 0.08  # ~12 fps
 DEDUP_TTL_SECONDS = 5.0
