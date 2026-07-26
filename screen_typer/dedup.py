@@ -9,6 +9,13 @@ class DedupTracker:
         self._ttl_seconds = ttl_seconds
         self._last_seen: dict[str, float] = {}
 
+    def set_ttl_seconds(self, ttl_seconds: float) -> None:
+        self._ttl_seconds = ttl_seconds
+
+    @property
+    def ttl_seconds(self) -> float:
+        return self._ttl_seconds
+
     def should_type(self, word: str) -> bool:
         normalized = word.strip().lower()
         if not normalized:
