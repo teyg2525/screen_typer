@@ -1,0 +1,7 @@
+pyobjc-framework-Cocoa
+pyobjc-framework-Quartz
+pyobjc-framework-ApplicationServices
+pyobjc-framework-Vision
+pyobjc-framework-ScreenCaptureKit
+quickmachotkey
+py2app
